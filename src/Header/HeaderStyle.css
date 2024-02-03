@@ -1,0 +1,47 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+}
+
+.header img{
+width: 100px;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+.headerUser{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.headerUser img{
+width: 25px;
+margin-right: 10px;
+}
+
+.headerUser img:hover{
+    opacity: 0.5;
+    }
+    
+.userImg img{
+  width: 40px;
+  margin-left: 40px;
+}
+
+.userImg img:hover{
+   opacity: 1;
+  }
+  
+
+  
+
+
+.line{
+    border-bottom: 1px solid #891BE8; 
+}
