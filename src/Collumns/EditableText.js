@@ -27,8 +27,8 @@ function EditableDiv() {
     };
 
     return (
-        <div>
-            <h1 id="editableText" onClick={handleH1Click} onBlur={handleBlur}>{text}</h1>
+        <div className='phaderEditableText'>
+            <h3 id="editableText" onClick={handleH1Click} onBlur={handleBlur}>{text}</h3>
         </div>
     );
 }

@@ -1,13 +1,14 @@
 import React from "react";
 import EditableDiv from "./EditableText";
 import NewCard from "./NewCard";
+import "./CollumnsStyle.css";
+
 
 const MainCollumn = () =>{
 
 
     return (
-        <div>
-        <h2> Name </h2>
+        <div className="changeText">
         <EditableDiv />
         <NewCard />
         </div>

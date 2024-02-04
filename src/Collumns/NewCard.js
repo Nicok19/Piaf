@@ -32,7 +32,7 @@ const NewCard = () => {
     return (
         <div>
             {renderCards()}
-            <button onClick={handleGenerateCard}>Generate Card</button>
+            <button className='generateCard' onClick={handleGenerateCard}>Generate Card</button>
         </div>
     );
 };
@@ -57,15 +57,19 @@ const Card = ({ index, text, onEditCard, onDeleteCard }) => {
     };
 
     return (
-        <div>
+        <div className='cardElements'>
             <input
                 value={editText}
                 onChange={handleInputChange}
                 onBlur={handleBlur}
                 placeholder="Write something..."
             />
-            <button onClick={handleDelete}>Delete</button>
-            <button onClick={handleAddCard}>Add Card</button>
+
+
+            <div className='CardButtons'>
+            <button className='deleteBTN' onClick={handleDelete}>Delete</button>
+           
+            </div>
         </div>
     );
 };
