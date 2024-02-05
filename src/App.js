@@ -26,19 +26,27 @@ const App = () => {
      
     <h2 className="collumnNames">Brackets</h2>
       
-      <div className="columns">
+      
+      <div className="collumns">
         {columns.map((column, index) => (
-          <div key={index} className="column">
+          <div key={index} className="collumn">
             {column}
             {columns.length > 1 && (
-              <button onClick={() => handleRemoveColumn(index)}>
-                Remove Column
+              <button className="removeCollumn" onClick={() => handleRemoveColumn(index)}>
+                Delete Column
               </button>
             )}
           </div>
         ))}
       </div>
-      <button onClick={handleAddColumn}>Add Column</button>
+
+
+      <div className="newCollumn">
+      <button className ="newCollumnButton" onClick={handleAddColumn}>+</button>
+      </div>
+
+
+     
     </div>
   );
 };

@@ -1,37 +1,39 @@
 import React, { useState } from 'react';
 
-function EditableDiv() {
+const EditableDiv = () => {
     const defaultText = 'Tasks';
     const [text, setText] = useState(defaultText);
 
-    const handleH1Click = () => {
-        const h1Element = document.getElementById('editableText');
-        h1Element.contentEditable = true;
-        h1Element.focus();
-        
+    const handleInputChange = (e) => {
+        setText(e.target.value);
+    };
+
+    const handleFocus = () => {
         if (text === defaultText) {
             setText('');
         }
     };
 
     const handleBlur = () => {
-        const h1Element = document.getElementById('editableText');
-        h1Element.contentEditable = false;
-        const newText = h1Element.innerText.trim();
-        
-        if (newText.length === 0) {
-            setText(defaultText); 
-        } else {
-            setText(newText);
+        if (text.trim() === '') {
+            setText(defaultText);
         }
     };
 
     return (
-        <div className='phaderEditableText'>
-            <h3 id="editableText" onClick={handleH1Click} onBlur={handleBlur}>{text}</h3>
+        <div id='editableText'>
+            <input
+                value={text}
+                onChange={handleInputChange}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                placeholder="Write something..."
+            />
         </div>
     );
-}
+};
 
 export default EditableDiv;
+
+
 
