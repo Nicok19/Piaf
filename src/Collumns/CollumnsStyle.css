@@ -1,0 +1,92 @@
+
+#editableText{
+    width: 362px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background-color:grey;
+padding-left: 20px;
+padding-top: 15px;
+color: #000;
+margin-bottom: 10px;
+
+}
+
+#editableText input{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: white;
+    background-color:grey;
+    border: none;
+    outline: none;
+    width: 300px;
+}
+
+#editableText input::placeholder{
+    color: white;
+}
+
+
+.generateCard{
+    width: 362px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 10px;
+border: 1px dashed rgba(0, 0, 0, 0.20);
+background: #FFF;
+}
+
+
+.generateCard:hover{
+    background-color:grey;
+    color: white;
+    font-size: 18px;
+}
+
+.cardElements{
+    width: 362px;
+    height: 167px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #F4F4F4;
+    margin-bottom: 15px;
+    
+}
+
+.cardElements input {
+    background-color: #F4F4F4;
+    border: none;
+    font-size: 20px;
+    width: 362px;
+    min-height: 140px;
+    padding: 30px;
+    outline: none;
+}
+
+
+.deleteBTN{
+width: 105px;
+height: 22px;
+border-radius: 7px;
+background-color:grey;
+border: none;
+color: white;
+padding-top: 5px;
+padding-bottom: 5px;
+margin-right: 10px;
+margin-bottom: 10px;
+}
+
+.deleteBTN:hover{
+    background-color: rgb(221, 16, 16);
+}
+
+.CardButtons{
+display: flex;
+justify-content: flex-end;
+}
+
+
+

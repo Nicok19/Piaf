@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./Header";
+import MainCollumn from "./Collumns";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [columns, setColumns] = useState([<MainCollumn key={1} />]);
+
+  const handleAddColumn = () => {
+    const newColumnKey = columns.length + 1;
+    const newColumns = [...columns, <MainCollumn key={newColumnKey} />];
+    setColumns(newColumns);
+  };
+
+  const handleRemoveColumn = (index) => {
+    if (columns.length > 1) {
+      const newColumns = [...columns];
+      newColumns.splice(index, 1);
+      setColumns(newColumns);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+     
+    <h2 className="collumnNames">Brackets</h2>
+      
+      
+      <div className="collumns">
+        {columns.map((column, index) => (
+          <div key={index} className="collumn">
+            {column}
+            {columns.length > 1 && (
+              <button className="removeCollumn" onClick={() => handleRemoveColumn(index)}>
+                Delete Column
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
+
+
+      <div className="newCollumn">
+      <button className ="newCollumnButton" onClick={handleAddColumn}>+</button>
+      </div>
+
+
+     
     </div>
   );
-}
+};
 
 export default App;
