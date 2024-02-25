@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/piaf/static/css/main.29ce689a.css",
+    "main.js": "/piaf/static/js/main.bae7e857.js",
+    "static/js/592.559084fa.chunk.js": "/piaf/static/js/592.559084fa.chunk.js",
+    "index.html": "/piaf/index.html",
+    "main.29ce689a.css.map": "/piaf/static/css/main.29ce689a.css.map",
+    "main.bae7e857.js.map": "/piaf/static/js/main.bae7e857.js.map",
+    "592.559084fa.chunk.js.map": "/piaf/static/js/592.559084fa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29ce689a.css",
+    "static/js/main.bae7e857.js"
+  ]
+}
