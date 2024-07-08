@@ -1,0 +1,115 @@
+NewCard Component
+
+The NewCard component is a React component that allows users to generate and manage cards.
+
+Usage:
+
+import React, { useState } from 'react';
+
+const NewCard = () => {
+    const [cards, setCards] = useState([]); 
+
+    // Function to generate a new card
+    const handleGenerateCard = () => {
+        setCards([...cards, '']); 
+    };
+
+    // Function to edit a card
+    const handleEditCard = (index, newText) => {
+        const updatedCards = [...cards]; 
+        updatedCards[index] = newText; 
+        setCards(updatedCards); 
+    };
+
+    // Function to delete a card
+    const handleDeleteCard = (index) => {
+        setCards(cards.filter((_, i) => i !== index)); 
+    };
+
+    // Function to render all cards
+    const renderCards = () => {
+        return cards.map((card, index) => (
+            <Card
+                key={index}
+                index={index}
+                text={card}
+                onEditCard={handleEditCard}
+                onDeleteCard={handleDeleteCard}
+            />
+        ));
+    };
+
+    return (
+        <div>
+            {renderCards()}
+            <button className='generateCard' onClick={handleGenerateCard}>Generate Card</button>
+        </div>
+    );
+};
+
+// Sub-component for individual cards
+const Card = ({ index, text, onEditCard, onDeleteCard }) => {
+    const [editText, setEditText] = useState(text); 
+
+    // Function to handle input change
+    const handleInputChange = (e) => {
+        setEditText(e.target.value);
+    };
+
+    // Function to handle blur event (edit completion)
+    const handleBlur = () => {
+        onEditCard(index, editText); 
+    };
+
+    // Function to handle card deletion
+    const handleDelete = () => {
+        onDeleteCard(index); 
+    };
+
+    // Function to add a new card
+    const handleAddCard = () => {
+        onEditCard(index, ''); 
+    };
+
+    return (
+        <div className='cardElements'>
+            <input
+                value={editText}
+                onChange={handleInputChange}
+                onBlur={handleBlur}
+                placeholder="Write something..."
+            />
+
+            <div className='CardButtons'>
+                <button className='deleteBTN' onClick={handleDelete}>Delete</button>
+            </div>
+        </div>
+    );
+};
+
+export default NewCard;
+
+Props:
+
+NewCard Component:
+- None
+
+Card Sub-component:
+- index: The index of the card in the list.
+- text: The text content of the card.
+- onEditCard: A function to handle editing the card text.
+- onDeleteCard: A function to handle deleting the card.
+
+Description:
+
+- The NewCard component allows users to generate new cards, edit existing cards, and delete cards.
+- Each card consists of an input field for editing text and a delete button.
+- Users can generate a new card by clicking the "Generate Card" button.
+- Cards can be edited by typing in the input field and blurred to save changes.
+- Cards can be deleted by clicking the delete button.
+
+Example Usage:
+
+<NewCard />
+
+This component will render a set of cards with editable text fields and delete buttons. Users can generate new cards, edit existing ones, and delete them as needed.

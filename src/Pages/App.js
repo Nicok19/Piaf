@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
-import Header from "./Header";
-import MainCollumn from "./Collumns";
+import Header from "../Components/Header";
+import MainCollumn from "../Components/Collumns";
 import "./App.css";
 
 const App = () => {

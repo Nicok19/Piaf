@@ -21,7 +21,7 @@ const EditableDiv = () => {
     };
 
     return (
-        <div id='editableText'>
+        <div className='editableText'>
             <input
                 value={text}
                 onChange={handleInputChange}
