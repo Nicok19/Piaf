@@ -1,0 +1,70 @@
+EditableDiv Component
+
+The EditableDiv component is a React component that provides an editable text area.
+
+Usage:
+
+import React, { useState } from 'react';
+
+const EditableDiv = () => {
+    // State to store the editable text
+    const defaultText = 'Tasks';
+    const [text, setText] = useState(defaultText);
+
+    // Function to handle text change
+    const handleInputChange = (e) => {
+        setText(e.target.value);
+    };
+
+    // Function to handle input focus
+    const handleFocus = () => {
+        if (text === defaultText) {
+            setText('');
+        }
+    };
+
+    // Function to handle input blur
+    const handleBlur = () => {
+        if (text.trim() === '') {
+            setText(defaultText);
+        }
+    };
+
+    return (
+        <div className='editableText'>
+            {/* Input displaying the editable text */}
+            <input
+                value={text}
+                onChange={handleInputChange}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                placeholder="Write something..."
+            />
+        </div>
+    );
+};
+
+export default EditableDiv;
+
+Props:
+
+The EditableDiv component does not accept any additional props.
+
+Description:
+
+- This component provides an editable text area that displays a default text when empty and allows the user to modify it.
+
+Features:
+
+1. Text State: Uses the useState hook to manage the state of the editable text.
+
+2. Event Handling:
+   - handleInputChange: Handles the onChange event of the input to update the text state.
+   - handleFocus: Handles the onFocus event of the input to remove the default text when the input receives focus.
+   - handleBlur: Handles the onBlur event of the input to restore the default text if the input is empty when losing focus.
+
+Example Usage:
+
+<EditableDiv />
+
+This component will render an editable text area where the user can input text.

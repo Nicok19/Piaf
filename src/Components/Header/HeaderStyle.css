@@ -32,6 +32,7 @@ margin-right: 10px;
 .userImg img{
   width: 40px;
   margin-left: 40px;
+  border-radius: 20px;
 }
 
 .userImg img:hover{
